@@ -1,26 +1,57 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #1f2937;
 }
+
+main {
+  max-width: 480px;
+  margin: 48px auto !important;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  padding: 24px !important;
+}
+
+main h1 { margin: 0 0 16px; font-size: 24px; color: #4c1d95; }
+
+input[type="text"], input:not([type]), input[type="password"] {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+input:focus { border-color: #764ba2; box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.2); }
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #764ba2;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+button:hover { background: #5b3a85; transform: translateY(-1px); }
+
+main ul { margin-top: 16px; }
+main li { border-bottom: 1px solid #eee; }
+main li button:nth-of-type(1) { background: #3b82f6; }
+main li button:nth-of-type(2) { background: #ef4444; }
+main li input[type="checkbox"] { width: 18px; height: 18px; accent-color: #764ba2; }
+
+/* Login card */
+div[style*="max-width: 320px"] {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+div[style*="max-width: 320px"] h2 { margin: 0 0 8px; text-align: center; color: #4c1d95; }
+div[style*="max-width: 320px"] button:last-of-type { background: #e5e7eb; color: #374151; }
